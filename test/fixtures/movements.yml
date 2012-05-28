@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  total: 1
+  subject: MyString
+  date: 2012-05-27
+  income: false
+
+two:
+  total: 1
+  subject: MyString
+  date: 2012-05-27
+  income: false

@@ -1,0 +1,17 @@
+development:
+	company_rut: 
+	company_account:
+	user_rut:
+	user_password:
+	
+test:
+	company_rut: 
+	company_account:
+	user_rut:
+	user_password:
+	
+production:
+	company_rut: 
+	company_account:
+	user_rut:
+	user_password:
