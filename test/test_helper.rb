@@ -11,3 +11,8 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+# VCR.configure do |c|
+#   c.cassette_library_dir = 'fixtures/vcr_cassettes'
+#   c.hook_into :fakeweb
+# end

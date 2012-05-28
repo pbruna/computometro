@@ -15,4 +15,5 @@
 /tmp
 
 # My mods
-config/computometro.yml
+/config/computometro.yml
+/fixtures

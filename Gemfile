@@ -7,6 +7,17 @@ gem 'rails', '3.2.3'
 
 gem 'sqlite3'
 
+group :test do
+ gem 'turn'
+ gem 'minitest'
+ gem 'vcr'
+ gem 'fakeweb'
+end
+
+group :development, :test do
+  gem 'guard'
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -39,3 +50,5 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'cartolify'
+gem 'rabl'
+gem 'jbuilder'

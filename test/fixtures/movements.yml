@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  total: 1
-  subject: MyString
+  total: 193939
+  subject: "Soporte CCT"
   date: 2012-05-27
-  income: false
+  income: true
 
 two:
-  total: 1
-  subject: MyString
+  total: -293893
+  subject: "Pago de Luz"
   date: 2012-05-27
   income: false
