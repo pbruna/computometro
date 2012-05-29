@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  highrise_id: 1
+  name: MyString
+  currency: MyString
+  price: 1
+  status: MyString
+
+two:
+  highrise_id: 1
+  name: MyString
+  currency: MyString
+  price: 1
+  status: MyString

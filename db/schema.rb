@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120529020538) do
+ActiveRecord::Schema.define(:version => 20120529192615) do
+
+  create_table "deals", :force => true do |t|
+    t.integer  "highrise_id"
+    t.string   "name"
+    t.string   "currency"
+    t.integer  "price"
+    t.string   "status"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "deals", ["highrise_id"], :name => "index_deals_on_highrise_id"
+  add_index "deals", ["status"], :name => "index_deals_on_status"
 
   create_table "movements", :force => true do |t|
     t.integer  "total"

@@ -54,6 +54,8 @@ GEM
     guard (1.0.3)
       ffi (>= 0.5.0)
       thor (>= 0.14.6)
+    highrise (3.0.3)
+      activeresource (~> 3.0)
     hike (1.2.1)
     i18n (0.6.0)
     jbuilder (0.4.0)
@@ -148,6 +150,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   fakeweb
   guard
+  highrise
   jbuilder
   jquery-rails
   minitest
