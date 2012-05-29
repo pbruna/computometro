@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528143143) do
+ActiveRecord::Schema.define(:version => 20120529020538) do
 
   create_table "movements", :force => true do |t|
     t.integer  "total"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20120528143143) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "checksum"
+    t.integer  "balance"
   end
 
   add_index "movements", ["checksum"], :name => "index_movements_on_checksum"

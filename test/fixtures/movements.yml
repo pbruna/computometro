@@ -5,9 +5,11 @@ one:
   subject: "Soporte CCT"
   date: 2012-05-27
   income: true
+  balance: 2000
 
 two:
   total: -293893
   subject: "Pago de Luz"
   date: 2012-05-27
   income: false
+  balance: 3000

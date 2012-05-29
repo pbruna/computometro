@@ -33,7 +33,7 @@ GEM
     blankslate (2.1.2.4)
     bootstrap-sass (2.0.3.1)
     builder (3.0.0)
-    cartolify (0.1)
+    cartolify (0.4)
       json
       mechanize
       nokogiri

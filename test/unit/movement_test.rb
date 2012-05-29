@@ -31,16 +31,21 @@ class MovementTest < ActiveSupport::TestCase
   end
 
   # test "that the data is synced from the bank" do
-  #      bank_credentials = {
-  #        :user => APP_CONFIG['user_rut'],
-  #        :password => APP_CONFIG['user_password'],
-  #        :company_rut => APP_CONFIG['company_rut'],
-  #        :number => APP_CONFIG['company_account']
-  #      }
-  #      bank = Bank.new("CHILEEMPRESAS", bank_credentials)
-  #      transactions = bank.transactions.reverse
-  #      Movement.sync_with_bank!
-  #      assert_equal(Movement.last.total, transactions.last.total)
-  #    end
+  #   bank_credentials = {
+  #     :user => APP_CONFIG['user_rut'],
+  #     :password => APP_CONFIG['user_password'],
+  #     :company_rut => APP_CONFIG['company_rut'],
+  #     :number => APP_CONFIG['company_account']
+  #   }
+  #   bank = Bank.new("CHILEEMPRESAS", bank_credentials)
+  #   transactions = bank.transactions.reverse
+  #   Movement.sync_with_bank!
+  #   assert_equal(Movement.last.total, transactions.last.total)
+  # end
+  
+  test "balance should get the last balance" do
+    last_movement = Movement.last
+    assert_equal(last_movement.balance, Movement.balance)
+  end
 
 end
