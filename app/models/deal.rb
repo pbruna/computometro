@@ -24,5 +24,9 @@ class Deal < ActiveRecord::Base
       deal.save
     end
   end
-
+  
+  scope :won, -> {where(:status => "won")}
+  scope :lost, -> {where(:status => "lost")}
+  scope :pending, -> {where(:status => "pending")}
+  
 end
