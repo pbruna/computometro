@@ -33,14 +33,14 @@ class DealTest < ActiveSupport::TestCase
     status = won_deals.last.status
     assert_equal("won", won_deals.first.status)
   end
-  
+
   test "return only the lost deal" do
     sync_deals
     lost_deals = Deal.lost
     status = lost_deals.last.status
     assert_equal("lost", lost_deals.first.status)
   end
-  
+
   test "return only the pending deal" do
     sync_deals
     pending_deals = Deal.pending
@@ -48,12 +48,27 @@ class DealTest < ActiveSupport::TestCase
     assert_equal("pending", pending_deals.first.status)
   end
 
-  private
-    def sync_deals
-      VCR.use_cassette "HIGHRISE/ITLinux_Sync" do
-        hr_deal = Deal.highrise_deals.last
-        deals = Deal.sync_with_highrise!
-      end
-    end
+  test "return total for each status of the deal" do
+    assert(Deal.pending_total)
+    assert(Deal.lost_total)
+    assert(Deal.won_total)
+  end
 
+  test "return_total_for" do
+    assert(Deal.total_for("pending"))
+    assert(Deal.total_for("lost"))
+    assert(Deal.total_for("won"))
+  end
+
+  test "set price to 0 if is nil" do
+    deal = Deal.new(
+      :highrise_id => 2020,
+      :name => "zimbra project",
+      :currency => "USD",
+      :price => nil,
+      :status => "pending"
+    )
+    deal.save
+    assert_equal(0, deal.price)
+  end
 end
