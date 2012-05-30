@@ -6,4 +6,9 @@ namespace :computometro do
     Movement.sync_with_bank!
   end
   
+  desc "Sincroniza Deals de HighRise"
+  task  :sync_hr_deals => :environment do
+    Deal.sync_with_highrise!
+  end
+  
 end
