@@ -16,4 +16,13 @@ class MovementsControllerTest < ActionController::TestCase
     assert_equal(json["balance"].class, Fixnum)
   end
   
+  test "total should return a json with balance and [income, outcome]" do
+    get :total, :format => :json
+    assert_response :success
+    json = JSON.parse(response.body)
+    assert_equal(Fixnum, json["total"]["balance"].class)
+    assert_equal(Fixnum, json["total"]["income"].class)
+    assert_equal(Fixnum, json["total"]["outcome"].class)
+  end
+  
 end

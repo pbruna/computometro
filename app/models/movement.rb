@@ -25,6 +25,17 @@ class Movement < ActiveRecord::Base
     end
   end
   
+  def self.income_total
+    income.to_a.sum(&:total)
+  end
+  
+  def self.outcome_total
+    outcome.to_a.sum(&:total)
+  end
+  
+  scope :income, -> {where(:income => true)}
+  scope :outcome, -> {where(:income => false)}
+  
   private
   def set_movement_type
     self.income = total > 0

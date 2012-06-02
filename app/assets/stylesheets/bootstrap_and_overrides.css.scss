@@ -1,17 +1,36 @@
 @import "bootstrap";
-
 @import "bootstrap-responsive";
 
+.fade-in {
+    opacity:0;  /* make things invisible upon start */
+	@include animation(fadeIn 1 ease-in forwards 1s);
+}
+
+.fade-in.one {
+	@include animation-delay(0.7s);
+}
+
+body {
+	background: rgba(15, 15, 15, 0.93) !important;
+	font-family: $helvetica;
+	color: white;
+}
+
 .navbar-inner {
+	@include linear-gradient(top, #45484d 0%, #000000 100%);
+	color: white;
 	border-radius: 1px;
 	.brand {
 		font-weight: bold;
-		font-size: 32px;
+		font-size: 24px;
+		color: white;
 	}
 	
-	#user-greet {
+	#date {
 		float: right;
-		margin-top: 25px;
+		margin-top: 20px;
+		font-weight: bold;
+		font-size: 16px;
 	}
 }
 
