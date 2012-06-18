@@ -2,15 +2,15 @@
 	
 	<div id="deals" class="span3 box">
 		<span class="title">Oportunidades</span>
-		<%= render :partial => 'pages/resume_total' %>
+		<%= render_resume_with_titles("Ganadas", "Perdidas")%>
 	</div>
 	<div id="bank" class="span3 box">
-		<span class="title">Banco</span>
-		<%= render :partial => 'pages/resume_total' %>
+		<span class="title">En Caja</span>
+		<%= render_resume_with_titles("Banco", "Inversiones")%>
 	</div>
 	<div id="invoices" class="span3 box">
 		<span class="title">Facturas</span>
-		<%= render :partial => 'pages/resume_total' %>
+		<%= render_resume_with_titles("Activas", "Vencidas")%>
 	</div>
 	
 </div>

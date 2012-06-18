@@ -10,6 +10,11 @@ class Movement < ActiveRecord::Base
     last.balance
   end
   
+  def self.fondos_mutuos
+    bank = self.bank_connection
+    bank.branch.balance_fondos_mutuos
+  end
+  
   def self.sync_with_bank!
     bank = self.bank_connection
     transactions = bank.transactions.reverse

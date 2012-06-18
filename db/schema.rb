@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120529192615) do
+ActiveRecord::Schema.define(:version => 20120617154030) do
 
   create_table "deals", :force => true do |t|
     t.integer  "highrise_id"
@@ -19,8 +19,11 @@ ActiveRecord::Schema.define(:version => 20120529192615) do
     t.string   "currency"
     t.integer  "price"
     t.string   "status"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.integer  "author_id"
+    t.date     "status_changed_on"
+    t.datetime "highrise_created_at"
   end
 
   add_index "deals", ["highrise_id"], :name => "index_deals_on_highrise_id"

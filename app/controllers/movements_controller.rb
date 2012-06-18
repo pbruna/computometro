@@ -10,6 +10,7 @@ class MovementsController < ApplicationController
   def total
     @total = Hash.new
     @total[:balance] = Movement.balance
+    @total[:fondos_mutuos] = Movement.fondos_mutuos
     @total[:income] = Movement.income_total
     @total[:outcome] = Movement.outcome_total
   end
