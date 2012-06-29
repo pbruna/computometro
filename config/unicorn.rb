@@ -1,5 +1,5 @@
 worker_processes 2
-working_directory "/home/folio/APP/folio/"
+working_directory "/home/computometro/APP/computometro/"
 
 # This loads the application in the master process before forking
 # worker processes
