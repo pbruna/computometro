@@ -53,8 +53,8 @@ function get_deals_totals() {
 function get_bank_totals() {
 	var totals = [];
 	$.getJSON('/movements/total.json', function(data){
-		red_total = data.total.balance
-		green_total = data.total.fondos_mutuos
+		green_total = data.total.balance
+		red_total = data.total.fondos_mutuos
 		main_total = red_total + green_total
 		totals = [main_total, green_total, red_total]
 		set_totals("bank", totals);
