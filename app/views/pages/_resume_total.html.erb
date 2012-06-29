@@ -1,9 +1,17 @@
 <div>
-	<div class="main-total">
-		<h1></h1>
+	<div class="waiting">
+		<%= image_tag "spinning_wheel.gif" %>
 	</div>
-	<div class="sub-totals">
-			<div class="green-total"><%= title1 %></div>
-			<div class="red-total"><%= title2 %></div>
+	<div class="info-box" style="display: none;">
+		<div class="main-total">
+			<h1></h1>
+		</div>
+		<div class="sub-totals">
+				<div class="green-total"><%= title1 %></div>
+				<div class="red-total"><%= title2 %></div>
+		</div>
+		<div class="show-graph-link">
+			<a href="#" class="view-more">Ver más</a>
+		</div>
 	</div>
 </div>

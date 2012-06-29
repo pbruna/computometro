@@ -1,6 +1,7 @@
 Computometro::Application.routes.draw do
   match '/movements/balance' => "movements#balance"
   match '/movements/total' => "movements#total"
+  match '/movements/graph' => "movements#graph"
   match '/deals/total' => "deals#total"
   match '/deals/graph' => "deals#graph"
   match '/invoices/total' => "invoices#total"

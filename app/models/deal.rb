@@ -1,5 +1,5 @@
 class Deal < ActiveRecord::Base
-  attr_accessible :currency, :highrise_id, :name, :price, :status
+  attr_accessible :currency, :highrise_id, :name, :price, :status, :author_id, :status_changed_on, :highrise_created_at
   Highrise::Base.format = :xml
   Highrise::Base.user = APP_CONFIG["highrise_token"]
   Highrise::Base.site = APP_CONFIG["highrise_site_url"]

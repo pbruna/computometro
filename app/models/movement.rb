@@ -38,8 +38,33 @@ class Movement < ActiveRecord::Base
     outcome.to_a.sum(&:total)
   end
   
+  def self.group_by_month_on_created(since_months_ago)
+    movements = months_ago(since_months_ago).order("created_at asc")
+    movements.to_a.group_by {|d| d.created_at.month}
+  end
+  
+  def self.income_by_month(months_ago)
+    hash = Hash.new
+    income.group_by_month_on_created(months_ago).each do |key, value|
+      date = value.first.created_at.strftime("%m/%y")
+      hash[date] = {:size => value.size, :total => value.sum(&:total)}
+    end
+    hash
+  end
+  
+  def self.outcome_by_month(months_ago)
+    hash = Hash.new
+    outcome.group_by_month_on_created(months_ago).each do |key, value|
+      date = value.first.created_at.strftime("%m/%y")
+      hash[date] = {:size => value.size, :total => (value.sum(&:total) * -1)}
+    end
+    hash
+  end
+  
+  
   scope :income, -> {where(:income => true)}
   scope :outcome, -> {where(:income => false)}
+  scope :months_ago, ->(months)  {where("created_at >= ?", Time.now.months_ago(months + 1).end_of_month + 1)}
   
   private
   def set_movement_type
@@ -63,5 +88,7 @@ class Movement < ActiveRecord::Base
     bank = Bank.new("CHILEEMPRESAS", bank_credentials)
     bank
   end
+  
+  
   
 end

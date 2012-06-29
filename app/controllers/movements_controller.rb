@@ -15,4 +15,12 @@ class MovementsController < ApplicationController
     @total[:outcome] = Movement.outcome_total
   end
   
+  def graph
+    months = params[:months] || 12
+    @graph = {
+      :income => Movement.income_by_month(months),
+      :outcome => Movement.outcome_by_month(months)
+    }
+  end
+  
 end
