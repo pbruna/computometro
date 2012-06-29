@@ -32,3 +32,4 @@ after_fork do |server, worker|
 # processes
   defined?(ActiveRecord::Base) and
     ActiveRecord::Base.establish_connection
+end
