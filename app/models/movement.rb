@@ -64,7 +64,7 @@ class Movement < ActiveRecord::Base
   
   scope :income, -> {where(:income => true)}
   scope :outcome, -> {where(:income => false)}
-  scope :months_ago, ->(months)  {where("created_at >= ?", Time.now.months_ago(months + 1).end_of_month + 1)}
+  scope :months_ago, ->(months)  {where("date >= ?", Time.now.months_ago(months + 1).end_of_month + 1)}
   
   private
   def set_movement_type
